@@ -5,6 +5,10 @@ import { createStore } from 'react-redux';
 import { Provider } from 'react-redux';
 import manageUsers from './reducers/manageUsers';
 
+const store = createStore(
+  manageUsers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const mapStateToProps = (state) => {
   return { users: state.users };
