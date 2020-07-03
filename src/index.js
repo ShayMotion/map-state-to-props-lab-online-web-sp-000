@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import App from './App'; 
+import { createStore } from 'react-redux';
+import { Provider } from 'react-redux';
+import manageUsers from './reducers/manageUsers';
 
-import manageUsers from './reducers/manageUsers'
 
-
-// add imports and code
-
+const mapStateToProps = (state) => {
+  return { users: state.users };
+};
+ 
+connect(mapStateToProps)(App);
 
 ReactDOM.render(
-  // add imports and code
+  <Provider store={store}>
   <App />
+  </Provider> 
   // add imports and code
   ,
   document.getElementById('root')
